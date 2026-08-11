@@ -1,0 +1,321 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Experiência escolar interativa sobre miopia, óptica, programação e robótica."
+    />
+    <title>Miopia — o foco do futuro</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+
+    <header class="topbar">
+      <a class="brand" href="#inicio" aria-label="Voltar ao início">
+        <span class="brand-mark" aria-hidden="true"><i></i></span>
+        <span>MIOPIA</span>
+      </a>
+
+      <button class="menu-button" type="button" aria-expanded="false" aria-controls="menu">
+        Menu
+      </button>
+
+      <nav class="nav" id="menu" aria-label="Navegação principal">
+        <a class="nav-featured" href="#flashcards">Flashcards</a>
+        <a href="#simulador">Simulador</a>
+        <a href="#solucao">Solução</a>
+        <a href="#quiz">Quiz</a>
+      </nav>
+
+      <div class="access" aria-label="Controles de acessibilidade">
+        <button id="fontDown" type="button" aria-label="Diminuir fonte">A−</button>
+        <button id="fontUp" type="button" aria-label="Aumentar fonte">A+</button>
+        <button id="contrast" type="button" aria-label="Alternar alto contraste">◐</button>
+      </div>
+    </header>
+
+    <main id="conteudo">
+      <section class="hero" id="inicio">
+        <div class="hero-orbit orbit-one" aria-hidden="true"></div>
+        <div class="hero-orbit orbit-two" aria-hidden="true"></div>
+
+        <div class="hero-copy">
+          <p class="eyebrow reveal-item">CIÊNCIA + PROGRAMAÇÃO + ROBÓTICA</p>
+          <h1 aria-label="Miopia: o foco do futuro">
+            <span class="word-main">MIOPIA</span>
+            <span class="word-sub">o foco do futuro.</span>
+          </h1>
+          <p class="hero-text reveal-item">
+            Quando a luz converge antes da retina, o que está longe perde nitidez.
+          </p>
+          <a class="primary-button reveal-item" href="#flashcards">
+            Começar pelos cards <span aria-hidden="true">↓</span>
+          </a>
+        </div>
+
+        <div class="optic-stage" aria-label="Animação da luz entrando em um olho com miopia">
+          <div class="distant-object" aria-hidden="true">
+            <span></span><i></i><b></b>
+          </div>
+          <div class="light-path" aria-hidden="true">
+            <i class="light light-top"></i>
+            <i class="light light-bottom"></i>
+          </div>
+          <div class="eye-shell" aria-hidden="true">
+            <span class="eye-cornea"></span>
+            <span class="eye-lens"></span>
+            <span class="eye-retina"></span>
+            <span class="eye-focus"></span>
+            <i class="inside-ray top"></i>
+            <i class="inside-ray bottom"></i>
+          </div>
+          <p><span></span> foco antes da retina</p>
+        </div>
+
+        <div class="scroll-note" aria-hidden="true"><span></span> role para explorar</div>
+      </section>
+
+      <section class="cards-lab" id="flashcards">
+        <div class="moving-label" aria-hidden="true">
+          <div>VIRE · DESCUBRA · TESTE · VIRE · DESCUBRA · TESTE ·</div>
+          <div>VIRE · DESCUBRA · TESTE · VIRE · DESCUBRA · TESTE ·</div>
+        </div>
+
+        <div class="section-head section-head-light reveal">
+          <div>
+            <p class="eyebrow">PARTE PRINCIPAL</p>
+            <h2>Flashcards em foco.</h2>
+          </div>
+          <p>Uma pergunta na frente. Uma resposta curta no verso.</p>
+        </div>
+
+        <div class="flash-status reveal" aria-live="polite">
+          <span id="flashCount">0 de 6 vistos</span>
+          <div class="flash-progress" aria-hidden="true"><i id="flashProgress"></i></div>
+          <button id="resetCards" type="button">Fechar todos</button>
+        </div>
+
+        <div class="flashcard-grid" id="flashcardGrid"></div>
+        <p class="cards-tip reveal">Clique ou pressione Enter para virar.</p>
+      </section>
+
+      <section class="science-section" id="entenda">
+        <div class="section-head reveal">
+          <div>
+            <p class="eyebrow">EM 20 SEGUNDOS</p>
+            <h2>Miopia, sem excesso de texto.</h2>
+          </div>
+        </div>
+
+        <div class="facts-line reveal">
+          <article>
+            <span>01</span>
+            <h3>De longe</h3>
+            <p>A imagem tende a ficar borrada.</p>
+          </article>
+          <article>
+            <span>02</span>
+            <h3>No olho</h3>
+            <p>O foco se forma antes da retina.</p>
+          </article>
+          <article>
+            <span>03</span>
+            <h3>Na correção</h3>
+            <p>A lente reposiciona o caminho da luz.</p>
+          </article>
+        </div>
+
+        <div class="camera-lab reveal">
+          <div class="camera-copy">
+            <p class="eyebrow">UMA CÂMERA BIOLÓGICA</p>
+            <h3>Clique nas partes do olho.</h3>
+            <div class="part-buttons" role="group" aria-label="Partes do olho">
+              <button class="active" type="button" data-part="cornea">Córnea</button>
+              <button type="button" data-part="cristalino">Cristalino</button>
+              <button type="button" data-part="retina">Retina</button>
+              <button type="button" data-part="cerebro">Cérebro</button>
+            </div>
+          </div>
+          <div class="part-display">
+            <span id="partNumber">01</span>
+            <p id="partText">Primeira superfície que desvia a luz ao entrar no olho.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="simulator-section" id="simulador">
+        <div class="section-head reveal">
+          <div>
+            <p class="eyebrow">SIMULADOR</p>
+            <h2>Afaste o objeto.</h2>
+          </div>
+          <p>Mude a distância e compare as duas visões.</p>
+        </div>
+
+        <div class="simulator-shell reveal">
+          <div class="scene-wrap">
+            <div class="scene" id="scene" aria-label="Paisagem usada para simular a nitidez visual">
+              <span class="scene-sun"></span>
+              <span class="scene-cloud one"></span>
+              <span class="scene-cloud two"></span>
+              <div class="scene-city" aria-hidden="true">
+                <i></i><i></i><i></i><i></i><i></i>
+              </div>
+              <strong id="sceneSign">ESCOLA</strong>
+              <span class="scene-road"></span>
+            </div>
+            <div class="clarity-line">
+              <span>Nitidez simulada</span>
+              <output id="clarityValue">100%</output>
+            </div>
+          </div>
+
+          <div class="simulator-controls">
+            <div class="mode-switch" role="group" aria-label="Tipo de visão">
+              <button class="active" type="button" data-mode="normal">Normal</button>
+              <button type="button" data-mode="myopia">Miopia</button>
+            </div>
+
+            <label for="distance">
+              Distância do objeto <output id="distanceValue">12 m</output>
+            </label>
+            <input id="distance" type="range" min="2" max="30" value="12" step="1" />
+
+            <div class="focus-meter" id="focusMeter" aria-hidden="true">
+              <span>LENTE</span><i></i><b></b><em>RETINA</em>
+            </div>
+            <p id="simulatorText" aria-live="polite">A luz chega focalizada à retina.</p>
+          </div>
+        </div>
+
+        <div class="quick-challenge reveal">
+          <div>
+            <p class="eyebrow">DESAFIO RÁPIDO</p>
+            <h3>Identifique antes que o tempo termine.</h3>
+          </div>
+          <div class="challenge-object" id="challengeObject" aria-label="Objeto do desafio">⌂</div>
+          <div class="challenge-actions">
+            <span id="challengeTime">5,0 s</span>
+            <button class="secondary-button" id="startChallenge" type="button">Iniciar</button>
+          </div>
+          <p id="challengeResult" aria-live="polite"></p>
+        </div>
+
+        <p class="disclaimer">
+          Simulação educativa: a experiência real varia entre pessoas.
+        </p>
+      </section>
+
+      <section class="solution-section" id="solucao">
+        <div class="section-head reveal">
+          <div>
+            <p class="eyebrow">ROBÓTICA + VISÃO</p>
+            <h2>Uma lente que responde ao ajuste.</h2>
+          </div>
+          <p>Nosso conceito demonstra correção óptica com foco regulável.</p>
+        </div>
+
+        <div class="solution-stage reveal">
+          <div class="solution-flow" aria-label="Fluxo do protótipo">
+            <div><span>01</span><strong>Comando</strong></div>
+            <i aria-hidden="true"></i>
+            <div><span>02</span><strong>Controlador</strong></div>
+            <i aria-hidden="true"></i>
+            <div><span>03</span><strong>Atuador</strong></div>
+            <i aria-hidden="true"></i>
+            <div><span>04</span><strong>Lente</strong></div>
+          </div>
+
+          <div class="lens-console">
+            <div class="lens-visual" aria-hidden="true">
+              <i class="solution-ray top"></i>
+              <i class="solution-ray bottom"></i>
+              <span class="variable-lens" id="variableLens"></span>
+              <b id="demoFocus"></b>
+              <em></em>
+            </div>
+            <label for="lensPower">
+              Ajuste demonstrado <output id="lensPowerValue">−2,0 D</output>
+            </label>
+            <input id="lensPower" type="range" min="0" max="4" value="2" step="0.5" />
+            <p id="lensMessage">O foco se aproxima do plano da retina.</p>
+          </div>
+        </div>
+
+        <div class="robotics-now-future reveal">
+          <article>
+            <p class="eyebrow">AGORA</p>
+            <h3>Medição precisa</h3>
+            <p>Sensores, exames digitais e equipamentos automatizados apoiam a avaliação.</p>
+          </article>
+          <article>
+            <p class="eyebrow">POSSIBILIDADE FUTURA</p>
+            <h3>Ajuste inteligente</h3>
+            <p>Lentes adaptativas e robôs poderão contribuir para soluções personalizadas.</p>
+          </article>
+        </div>
+
+        <div class="treatment-note reveal">
+          <strong>Correção não é cura.</strong>
+          <p>
+            Óculos e lentes de contato são correções comuns. Estratégias de controle da progressão exigem avaliação profissional.
+          </p>
+        </div>
+      </section>
+
+      <section class="prototype-section" id="prototipo">
+        <div class="section-head reveal">
+          <div>
+            <p class="eyebrow">PROTÓTIPO</p>
+            <h2>Espaço para os registros.</h2>
+          </div>
+        </div>
+        <div class="media-grid reveal" aria-label="Espaços reservados para fotos e vídeos do protótipo">
+          <div class="media-slot"><span>01</span><i aria-hidden="true">＋</i></div>
+          <div class="media-slot"><span>02</span><i aria-hidden="true">＋</i></div>
+          <div class="media-slot video"><span>03</span><i aria-hidden="true">▶</i></div>
+          <div class="media-slot video"><span>04</span><i aria-hidden="true">▶</i></div>
+        </div>
+      </section>
+
+      <section class="quiz-section" id="quiz">
+        <div class="section-head section-head-light reveal">
+          <div>
+            <p class="eyebrow">QUIZ FINAL</p>
+            <h2>O conteúdo ficou nítido?</h2>
+          </div>
+        </div>
+
+        <div class="quiz-box reveal">
+          <header>
+            <span id="quizCounter">1 / 5</span>
+            <div class="quiz-progress" aria-hidden="true"><i id="quizBar"></i></div>
+            <strong id="quizScore">0 PONTOS</strong>
+          </header>
+          <div id="quizContent"></div>
+        </div>
+      </section>
+
+      <section class="sources-section" id="fontes">
+        <p class="eyebrow">FONTES UTILIZADAS</p>
+        <div class="source-links">
+          <a href="https://www.nei.nih.gov/eye-health-information/eye-conditions-and-diseases/nearsightedness-myopia" target="_blank" rel="noopener noreferrer">National Eye Institute ↗</a>
+          <a href="https://www.who.int/publications-detail-redirect/world-report-on-vision" target="_blank" rel="noopener noreferrer">Organização Mundial da Saúde ↗</a>
+          <a href="https://www.cbo.com.br/" target="_blank" rel="noopener noreferrer">Conselho Brasileiro de Oftalmologia ↗</a>
+          <a href="https://www.gov.br/saude/pt-br" target="_blank" rel="noopener noreferrer">Ministério da Saúde ↗</a>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <span>PROJETO ESCOLAR · MIOPIA</span>
+      <a href="#inicio">Voltar ao topo ↑</a>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
