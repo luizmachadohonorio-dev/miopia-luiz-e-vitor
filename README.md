@@ -118,11 +118,9 @@ projeto-miopia/
 
 Não é necessário instalar pacotes ou executar comandos no terminal.
 
-## Adicionando os registros do protótipo
+## Registros do protótipo
 
-O site possui quatro espaços reservados para imagens e vídeos. Para incluir os registros reais da equipe, substitua os espaços da seção `#prototipo`, localizada no arquivo `index.html`, pelos elementos de mídia correspondentes.
-
-Utilize somente fotos, vídeos e informações reais do projeto.
+A seção `#prototipo` apresenta cinco fotos reais da montagem, da programação e dos testes. Os arquivos estão organizados na pasta `imagens` e são exibidos em uma galeria responsiva.
 
 ## Acessibilidade
 

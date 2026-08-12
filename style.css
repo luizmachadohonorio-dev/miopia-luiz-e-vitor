@@ -1683,19 +1683,27 @@ input[type="range"]::-webkit-slider-thumb:hover {
 
 .media-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(6, minmax(0, 1fr));
   gap: 1rem;
 }
 
 .media-slot {
   position: relative;
+  grid-column: span 2;
   aspect-ratio: 4 / 5;
-  display: grid;
-  place-items: center;
+  margin: 0;
   border: 2px solid var(--ink);
   background: var(--paper);
   overflow: hidden;
-  transition: background 300ms ease, color 300ms ease, transform 300ms ease;
+  transition: transform 300ms ease, box-shadow 300ms ease;
+}
+
+.media-slot:nth-child(4) {
+  grid-column: 2 / span 2;
+}
+
+.media-slot:nth-child(5) {
+  grid-column: 4 / span 2;
 }
 
 .media-slot:nth-child(2n) {
@@ -1703,59 +1711,51 @@ input[type="range"]::-webkit-slider-thumb:hover {
 }
 
 .media-slot:hover {
-  background: var(--violet);
-  color: var(--white);
   transform: translateY(-8px) rotate(-1deg);
+  box-shadow: 9px 9px 0 var(--violet);
 }
 
 .media-slot:nth-child(2n):hover {
   transform: translateY(0.7rem) rotate(1deg);
 }
 
-.media-slot::before,
-.media-slot::after {
-  position: absolute;
-  width: 140%;
-  height: 1px;
-  background: currentColor;
-  opacity: 0.15;
-  content: "";
+.media-slot img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  transition: transform 500ms ease, filter 300ms ease;
 }
 
-.media-slot::before {
-  transform: rotate(48deg);
-}
-
-.media-slot::after {
-  transform: rotate(-48deg);
+.media-slot:hover img {
+  transform: scale(1.035);
+  filter: saturate(1.05) contrast(1.03);
 }
 
 .media-slot span {
   position: absolute;
   top: 0.8rem;
   left: 0.8rem;
+  z-index: 2;
+  padding: 0.38rem 0.48rem;
+  border: 1px solid rgba(255, 255, 255, 0.75);
+  background: rgba(31, 23, 45, 0.78);
+  color: var(--white);
   font: 900 0.62rem "Courier New", monospace;
 }
 
-.media-slot i {
-  position: relative;
+.media-slot figcaption {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
   z-index: 2;
-  display: grid;
-  place-items: center;
-  width: 60px;
-  height: 60px;
-  border: 2px solid currentColor;
-  border-radius: 50%;
-  font: normal 1.5rem Arial, sans-serif;
-  transition: transform 400ms ease;
-}
-
-.media-slot:hover i {
-  transform: rotate(180deg) scale(1.1);
-}
-
-.media-slot.video:hover i {
-  transform: scale(1.15);
+  padding: 2.4rem 0.9rem 0.9rem;
+  background: linear-gradient(transparent, rgba(31, 23, 45, 0.9));
+  color: var(--white);
+  font: 900 0.67rem "Courier New", monospace;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
 }
 
 /* Quiz */
@@ -2158,6 +2158,12 @@ body.high-contrast {
 
   .media-grid {
     grid-template-columns: repeat(2, 1fr);
+  }
+
+  .media-slot,
+  .media-slot:nth-child(4),
+  .media-slot:nth-child(5) {
+    grid-column: auto;
   }
 }
 
